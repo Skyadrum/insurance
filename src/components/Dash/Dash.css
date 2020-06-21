@@ -1,0 +1,16 @@
+.cards{
+    margin-top: 50px;
+    margin: 1em;
+}
+
+.header-polices {
+    background-color: #157AF6;
+}
+
+.header-claims {
+    background-color: #4CA746;
+}
+
+.header-info{
+    background-color: #F8C146;
+}
