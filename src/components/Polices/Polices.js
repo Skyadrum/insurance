@@ -1,15 +1,34 @@
 import React from 'react'
 import { Card, Button, Form, Row, Col } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { createPolicy, deletePolicy, claimPolicy } from '../../Actions/Actions'
 import './Polices.css'
 
+
 export default class Polices extends React.Component {
+
+    handlerSubmit = (event) => {
+        event.preventDefault()
+        const name = event.target[0].value
+        const amount = event.target[1].value
+
+        this.props.onSend({ name, amount });
+        console.log(name);
+
+    }
+
+    send = (data) => {
+        console.log(data);
+    }
+
     render() {
+
         return (
             <div>
                 <Card className='cards' border="primary">
                 <Card.Header as="h5" className='card-header'>Create a New Policy</Card.Header>
                     <Card.Body>
-                    <Form>
+                    <Form onSubmit={ this.handlerSubmit }>
                         <Form.Group as={Row} controlId="formHorizontalEmail">
                             <Form.Label column sm={2}>Name</Form.Label>
                             <Col sm={10}>

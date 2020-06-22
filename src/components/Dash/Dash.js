@@ -1,10 +1,11 @@
 import React  from 'react';
 import { Card, CardGroup, Button, ListGroup } from 'react-bootstrap'
+
 import './Dash.css'
 
-class Dash extends React.Component {
+function Dash () {
     
-    render() { 
+    
         return ( 
             <div>
                 <CardGroup>
@@ -51,7 +52,6 @@ class Dash extends React.Component {
                     </CardGroup>
             </div>
          );
-    }
 }
  
 export default Dash;
