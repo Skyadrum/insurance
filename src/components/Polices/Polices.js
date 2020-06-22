@@ -20,6 +20,7 @@ function Polices() {
         }
 
         console.log('Poliza', policy)
+        
     }
 
     
