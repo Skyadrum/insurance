@@ -24,8 +24,8 @@ export default class Polices extends React.Component {
     render() {
 
         return (
-            <div>
-                <Card className='cards' border="primary">
+            <div className='cards'>
+                <Card  border="primary">
                 <Card.Header as="h5" className='card-header'>Create a New Policy</Card.Header>
                     <Card.Body>
                     <Form onSubmit={ this.handlerSubmit }>

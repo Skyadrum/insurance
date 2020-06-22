@@ -13,11 +13,9 @@ export default class Head extends React.Component {
                         <span className="head">Insurance Carrier</span>
                     </Navbar.Brand>
                     <Nav className="ml-auto">
-                        {/* <Nav.Link >Pólizas</Nav.Link>
-                        <Nav.Link >Reclamos</Nav.Link> */}
-                        {/* <Button variant="outline-primary" className='btn' >Polices</Button>
+                        <Button variant="outline-primary" className='btn' >Polices</Button>
                         <Button variant="outline-success" className='btn'>Claims</Button>
-                        <Button variant="outline-warning" className='btn'>DMC Info</Button> */}
+                        <Button variant="outline-warning" className='btn'>DMC Info</Button>
                     </Nav>
                 </Navbar>
             </div>
