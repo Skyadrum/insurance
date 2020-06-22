@@ -5,53 +5,54 @@ import { createPolicy, deletePolicy, claimPolicy } from '../../Actions/Actions'
 import './Polices.css'
 
 
-export default class Polices extends React.Component {
+function Polices() {
 
-    handlerSubmit = (event) => {
+    const nameRef = React.createRef()
+    const amountRef = React.createRef()
+    
+
+    const handlerSubmit = (event) => {
         event.preventDefault()
-        const name = event.target[0].value
-        const amount = event.target[1].value
 
-        this.props.onSend({ name, amount });
-        console.log(name);
+        let policy = {
+            name: nameRef.current.value,
+            amount: amountRef.current.value
+        }
 
+        console.log('Poliza', policy)
     }
 
-    send = (data) => {
-        console.log(data);
-    }
+    
+    return (
+        <div className='cards'>
+            <Card  border="primary">
+            <Card.Header as="h5" className='card-header'>Create a New Policy</Card.Header>
+                <Card.Body>
+                <Form>
+                    <Form.Group as={Row} controlId="formHorizontalEmail">
+                        <Form.Label column sm={2}>Name</Form.Label>
+                        <Col sm={10}>
+                        <Form.Control type="text" ref={ nameRef } placeholder="Name" />
+                        </Col>
+                    </Form.Group>
 
-    render() {
-
-        return (
-            <div className='cards'>
-                <Card  border="primary">
-                <Card.Header as="h5" className='card-header'>Create a New Policy</Card.Header>
-                    <Card.Body>
-                    <Form onSubmit={ this.handlerSubmit }>
-                        <Form.Group as={Row} controlId="formHorizontalEmail">
-                            <Form.Label column sm={2}>Name</Form.Label>
-                            <Col sm={10}>
-                            <Form.Control type="text" placeholder="Name" />
-                            </Col>
-                        </Form.Group>
-
-                        <Form.Group as={Row} controlId="formHorizontalPassword">
-                            <Form.Label column sm={2}>Amount</Form.Label>
-                            <Col sm={10}>
-                            <Form.Control type="text" placeholder="EX: $100.00" />
-                            </Col>
-                        </Form.Group>
-                    
-                        <Form.Group as={Row}>
-                            <Col sm={{ span: 10, offset: 2 }}>
-                            <Button type="submit">Create</Button>
-                            </Col>
-                        </Form.Group>
-                        </Form>
-                    </Card.Body>
-                </Card>
-            </div>
-        )
-    }
+                    <Form.Group as={Row} controlId="formHorizontalPassword">
+                        <Form.Label column sm={2}>Amount</Form.Label>
+                        <Col sm={10}>
+                        <Form.Control type="text" placeholder="EX: $100.00" ref={ amountRef }/>
+                        </Col>
+                    </Form.Group>
+                
+                    <Form.Group as={Row}>
+                        <Col sm={{ span: 10, offset: 2 }}>
+                        <Button onClick={handlerSubmit}>Create</Button>
+                        </Col>
+                    </Form.Group>
+                    </Form>
+                </Card.Body>
+            </Card>
+        </div>
+    )
 }
+
+export default Polices

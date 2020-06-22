@@ -16,8 +16,8 @@ function App() {
     return (
         <div className="main-container">
             <Header/>
-            {/* <Polices/> */}
-            <Claims />
+            <Polices/>
+            {/* <Claims /> */}
             
             {/* <Dash/> */}
         </div>
