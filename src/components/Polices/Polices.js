@@ -9,7 +9,7 @@ function Polices() {
 
     const nameRef = React.createRef()
     const amountRef = React.createRef()
-    
+
 
     const handlerSubmit = (event) => {
         event.preventDefault()
@@ -20,10 +20,10 @@ function Polices() {
         }
 
         console.log('Poliza', policy)
-        
+
     }
 
-    
+
     return (
         <div className='cards'>
             <Card  border="primary">
@@ -43,7 +43,7 @@ function Polices() {
                         <Form.Control type="text" placeholder="EX: $100.00" ref={ amountRef }/>
                         </Col>
                     </Form.Group>
-                
+
                     <Form.Group as={Row}>
                         <Col sm={{ span: 10, offset: 2 }}>
                         <Button onClick={handlerSubmit}>Create</Button>
@@ -56,4 +56,11 @@ function Polices() {
     )
 }
 
+// const mapStateToProps = (state) => {
+//     return{
+//       name: state.name,
+//       amount: state.amount
+//     }
+// }
+// export default Polices (mapStateToProps)(Polices)
 export default Polices

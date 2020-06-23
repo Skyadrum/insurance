@@ -9,17 +9,13 @@ import Dash from '../Dash/Dash'
 import './App.css'
 
 
-function App() {  
-    // const polices = useSelector(state => state.createPolicy)
-    // const claims = useSelector(state => state.claimPolicy)
+function App() {
 
     return (
         <div className="main-container">
             <Header/>
-            <Polices/>
-            {/* <Claims /> */}
-            
-            {/* <Dash/> */}
+            <Dash/>
+            <Claims />
         </div>
     );
 }

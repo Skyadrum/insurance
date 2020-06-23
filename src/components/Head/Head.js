@@ -2,6 +2,9 @@ import React from 'react'
 import { Navbar, Nav, Button } from 'react-bootstrap'
 import logo from './dmc.png'
 import './Head.css'
+import { BrowserRouter, Link } from 'react-router-dom'
+import { Polices } from '../Polices/Polices'
+import { Claims } from '../Claims/Claims'
 
 export default class Head extends React.Component {
     render() {
@@ -13,9 +16,17 @@ export default class Head extends React.Component {
                         <span className="head">Insurance Carrier</span>
                     </Navbar.Brand>
                     <Nav className="ml-auto">
-                        <Button variant="outline-primary" className='btn' >Polices</Button>
-                        <Button variant="outline-success" className='btn'>Claims</Button>
-                        <Button variant="outline-warning" className='btn'>DMC Info</Button>
+                      <BrowserRouter>
+                      <div>
+                        <Link to="/Polices">
+                          <Button variant="outline-primary" className='btn' >Polices</Button>
+                        </Link>
+
+                        <Link to="/Claims">
+                          <Button variant="outline-success" className='btn' >Claims</Button>
+                        </Link>
+                      </div>
+                      </BrowserRouter>
                     </Nav>
                 </Navbar>
             </div>
