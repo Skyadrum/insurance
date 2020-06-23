@@ -15,7 +15,6 @@ function App() {
         <div className="main-container">
             <Header/>
             <Dash/>
-            <Claims />
         </div>
     );
 }
